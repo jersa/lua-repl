@@ -26,7 +26,7 @@ local error     = error
 --- that implementors implement the lines() method.
 
 --- Run a REPL loop in a synchronous fashion.
--- @name repl.sync:run
+-- #name repl.sync:run
 function sync_repl:run()
   self:prompt(1)
   for line in self:lines() do
@@ -37,8 +37,8 @@ function sync_repl:run()
 end
 
 --- Returns an iterator that yields lines to be evaluated.
--- @name repl.sync:lines
--- @return An iterator.
+-- #@name repl.sync:lines
+-- #return An iterator.
 function sync_repl:lines()
   error 'You must implement the lines method'
 end
