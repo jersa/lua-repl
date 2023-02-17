@@ -22,6 +22,14 @@
 
 local repl          = require 'repl.console'
 local rcfile_loaded = repl:loadplugin 'rcfile'
+local lua_impl
+
+-- Determine which version we're running
+if jit then
+  lua_impl = jit.version
+else
+  lua_impl = _VERSION
+end
 
 if not rcfile_loaded then
   local has_linenoise = pcall(require, 'linenoise')
@@ -37,5 +45,5 @@ if not rcfile_loaded then
   repl:loadplugin 'autoreturn'
 end
 
-print('Lua REPL ' .. tostring(repl.VERSION))
+print('Lua REPL ' .. tostring(repl.VERSION) .. " (using " .. lua_impl .. ")")
 repl:run()

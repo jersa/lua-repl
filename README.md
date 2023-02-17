@@ -85,8 +85,13 @@ not be forced onto a user if they don't want them, or play tricks with their
 setup (see issue #47).  If you would like to continue using these plugins, please
 put the following code into your `~/.rep.lua`:
 
+* You'll need to install semver.lua (https://github.com/kikito/semver.lua), a module 
+implementing the semantic versioning scheme, to reliably compare version strings. It can 
+be installed using luarocks.
+
 ```lua
-if repl.VERSION >= 0.8 then
+v = require('semver')
+if v(repl.VERSION) >= v('0.8') then
   -- default plugins
   repl:loadplugin 'linenoise'
   repl:loadplugin 'history'

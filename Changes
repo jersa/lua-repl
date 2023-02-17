@@ -1,5 +1,10 @@
 NEXT
 
+0.10.1  Feb 17 2023
+      --- Features/Enhancements ---
+        - Adpoted a semantic versioning scheme
+        - On startup, output the Lua or LuaJIT version being used.
+
 0.10  Jan 14 2022
       --- Bug Fixes ---
         - Fixed issue where current buffer is stuck after certain syntax errors (GH #61, thanks Justin Blanchard!)
