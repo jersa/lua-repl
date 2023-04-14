@@ -21,7 +21,7 @@
 
 local plugins_lookup_meta = { __mode = 'k' }
 
-local repl         = { _buffer = '', _plugins = setmetatable({}, plugins_lookup_meta), _features = {}, _ifplugin = {}, _iffeature = {}, VERSION = "0.10.1" }
+local repl         = { _buffer = '', _plugins = setmetatable({}, plugins_lookup_meta), _features = {}, _ifplugin = {}, _iffeature = {}, VERSION = "0.11.1" }
 local compat       = require 'repl.compat'
 local select       = select
 local dtraceback   = debug.traceback

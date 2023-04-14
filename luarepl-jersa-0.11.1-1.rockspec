@@ -1,12 +1,12 @@
-package = 'luarepl'
-version = '0.10-1'
+package = 'luarepl-jersa'
+version = '0.11.1-1'
 source  = {
-    url = 'https://github.com/hoelzro/lua-repl/archive/0.10.tar.gz',
-    dir = 'lua-repl-0.10',
+    url = 'https://github.com/jersa/lua-repl/archive/0.10.tar.gz',
+    dir = 'lua-repl-0.11.1-1',
 }
 description = {
   summary  = 'A reusable REPL component for Lua, written in Lua',
-  homepage = 'https://github.com/hoelzro/lua-repl',
+  homepage = 'https://github.com/jersa/lua-repl',
   license  = 'MIT/X11',
 }
 dependencies = {
