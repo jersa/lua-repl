@@ -24,6 +24,7 @@ local repl          = require 'repl.console'
 local rcfile_loaded = repl:loadplugin 'rcfile'
 local lua_impl
 
+print(rcfile_loaded)
 -- Determine which version we're running
 if jit then
   lua_impl = jit.version
@@ -46,4 +47,5 @@ if not rcfile_loaded then
 end
 
 print('Lua REPL ' .. tostring(repl.VERSION) .. " (using " .. lua_impl .. ")")
+print("Ctrl-D to exit")
 repl:run()

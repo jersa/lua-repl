@@ -42,7 +42,9 @@ Hooks into the linenoise library.  Allows the use of tab completion and history.
 ## rcfile (\*)
 
 Loads Lua code in `$HOME/.rep.lua` if the file exists.  The repl object is provided to the file in a variable named `repl`, so
-users may load plugins of their choosing.
+users may load plugins of their choosing. If rep.lua is started in a directory besides `$HOME` and a `.rep.lua` file is found in it, 
+the Lua code in that file will be loaded instead. This may be useful when one is working on a project contained within a directory 
+and and project-specific Lua code needs to be loaded each time the REPL is run.
 
 ## semicolon_suppress_output
 

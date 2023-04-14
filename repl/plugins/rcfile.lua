@@ -30,13 +30,19 @@ local function readable(filename)
 end
 
 local function init()
-  local home = os.getenv 'HOME'
+  -- look for an rcfile in the current directory
+  local pwd = os.getenv 'PWD'
+  local rcfile = pwd .. '/.rep.lua'
 
-  if not home then
-    return
+  if not readable(rcfile) then
+    -- look in the home directory
+    local home = os.getenv 'HOME'
+    if not home then
+      return
+    end
+
+    rcfile = home .. '/.rep.lua'
   end
-
-  local rcfile = home .. '/.rep.lua'
 
   if not readable(rcfile) then
     return
@@ -44,6 +50,8 @@ local function init()
 
   local chunk = assert(loadfile(rcfile))
   local env   = setmetatable({ repl = repl }, { __index = _G, __newindex = _G })
+
+  repl._rcfile = rcfile
 
   setfenv(chunk, env)
 

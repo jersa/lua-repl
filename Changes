@@ -1,8 +1,15 @@
 NEXT
 
-0.10.1  Feb 17 2023
+0.11.2  Apr 14 2023
+      --- Features/Enhancements --git@github.com:jersa/lua-repl.git-
+        - rcfile plugin looks for a .rep.lua file in the current directory before defaulting
+          to the home directory.
+        - On startup, tell the user how to exit the REPL by using Ctrl-D.
+
+
+0.11.1  Feb 17 2023
       --- Features/Enhancements ---
-        - Adpoted a semantic versioning scheme
+        - Adpoted a semantic versioning scheme.
         - On startup, output the Lua or LuaJIT version being used.
 
 0.10  Jan 14 2022
